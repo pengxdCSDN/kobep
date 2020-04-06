@@ -1,0 +1,36 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: kobep-mq
+    redis:
+      host:  182.92.243.231
+      port:  6379
+      database:  0
+      password:  skypxd
+      timeout: 60s
+      lettuce:
+        pool:
+          max-active: 400
+          max-idle: 100
+          max-wait: -1ms
+          min-idle: 20
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://182.92.243.231:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: skypxd
+  rabbitmq:
+    username: pxd
+    password: 123456
+    host: 182.92.243.231
+    port: 5672
+    publisher-returns: true
+    publisher-confirm-type: correlated
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 100
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  typeAliasesPackage: com.xd.kobepmq.entity

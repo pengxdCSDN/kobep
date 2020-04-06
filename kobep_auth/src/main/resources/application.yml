@@ -1,0 +1,59 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: kobep-auth
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://182.92.243.231:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: skypxd
+  redis:
+    #数据库索引
+    host:  182.92.243.231
+    port:  6379
+    database:  0
+    password:  skypxd
+    timeout: 60s
+    lettuce:
+      pool:
+        #最大连接数
+        max-active: 400
+        max-idle: 100
+        max-wait: -1ms
+        #最小空闲
+        min-idle: 20
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xd.kobepauth.entity
+sep:
+  auth:
+    oauth2:
+      tokenStore: jwt
+      #      defaultServer: true
+      clientDetails[0]:
+        clientId: SampleClientId
+        clientSecret: secret
+        scope: user_info
+        accessTokenValidateSeconds: 3600
+        resourceIds: kobep
+      clientDetails[1]:
+        clientId: SampleClientId2
+        clientSecret: secret2
+        scope: user_info2
+        resourceIds: kobep
+## 设置熔断器超时时间和调用超时时间与重试机制次数  开始
+feign:
+  sentinel:
+    enabled: true
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  eager-load:
+    enabled: true #饥饿加载
+    clients: kobep-back
