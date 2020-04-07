@@ -4,10 +4,10 @@ spring:
   application:
     name: kobep-mq
     redis:
-      host:  182.92.243.231
+      host:  127.0.0.1
       port:  6379
       database:  0
-      password:  skypxd
+      password:
       timeout: 60s
       lettuce:
         pool:
@@ -17,13 +17,13 @@ spring:
           min-idle: 20
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://182.92.243.231:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
     password: skypxd
   rabbitmq:
-    username: pxd
-    password: 123456
-    host: 182.92.243.231
+    username: guest
+    password: guest
+    host: 127.0.0.1
     port: 5672
     publisher-returns: true
     publisher-confirm-type: correlated

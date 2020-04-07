@@ -6,9 +6,9 @@ spring:
   datasource:
     kobepjpa:
       driverClassName: com.mysql.jdbc.Driver
-      jdbcUrl: jdbc:mysql://182.92.243.231:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
+      jdbcUrl: jdbc:mysql://127.0.0.1:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
       username: root
-      password: skypxd
+      password:
       max-idle: 10
       max-wait: 10000
       min-idle: 5

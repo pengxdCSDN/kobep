@@ -5,15 +5,15 @@ spring:
     name: kobep-back
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://182.92.243.231:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/kobep?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
-    password: skypxd
+    password: root
   redis:
     #数据库索引
-    host:  182.92.243.231
+    host:  127.0.0.1
     port:  6379
     database:  0
-    password:  skypxd
+    password:
     timeout: 60s
     lettuce:
       pool:

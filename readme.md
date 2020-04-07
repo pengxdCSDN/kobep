@@ -9,7 +9,7 @@
 ### 技术栈
 
 - 注册中心：Nacos
-- 服务网关：Spring cloud-Gateway
+- 服务网关：Spring cloud-Gateway(集成Knife4j，前身swagger2)
 - 配置中心：Nacos
 - 服务调用：Spring-cloud-open-Feign
 - 熔断降级：Sentinel
