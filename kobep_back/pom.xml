@@ -8,7 +8,7 @@
         <version>1.0.0-RELEASE</version>
     </parent>
     <artifactId>kobep_back</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-RELEASE</version>
     <name>kobep_back</name>
     <description>Demo project for Spring Boot</description>
 
@@ -16,6 +16,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR2</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <docker.image.prefix>kobep</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -57,10 +58,36 @@
     </dependencies>
 
     <build>
+        <finalName>app</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.3</version>
+            <!--    <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>-->
+
+                <configuration>
+
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAVA_OPTS></JAVA_OPTS>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>

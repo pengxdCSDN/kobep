@@ -23,6 +23,8 @@
         <module>kobep_back</module>
         <module>kobep_auth</module>
         <module>kobep_gateway</module>
+        <module>kobep_common</module>
+        <module>kobep_mq</module>
     </modules>
 
     <properties>

@@ -30,6 +30,7 @@ public class SysUserController {
     public List<Map<String, Object>> findByKid(@PathVariable int userId, HttpServletRequest httpServletRequest) throws Exception{
 
 
+
         return sysUserService.findByUserId(userId);
 
     }

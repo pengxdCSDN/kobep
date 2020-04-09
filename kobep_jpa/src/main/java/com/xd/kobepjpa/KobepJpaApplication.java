@@ -18,8 +18,8 @@ public class KobepJpaApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(KobepJpaApplication.class, args);
 
-        String userName = applicationContext.getEnvironment().getProperty("pxd.name");
-        System.err.println("pxd name :"+userName);
+        String userName = applicationContext.getEnvironment().getProperty("kobep.name");
+        System.err.println("kobep name :"+userName);
 
 
     }

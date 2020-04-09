@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kobep-gateway
+    name: kobep-mq
   cloud:
     nacos:
       config:
@@ -9,8 +9,6 @@ spring:
         group: KOBEP_GROUP
       discovery:
         server-addr: 182.92.243.231:8848
-  main:
-    allow-bean-definition-overriding: true
 
 
 

@@ -72,7 +72,7 @@ public class LogMsgAspect {
             }
             // 本次操作用时（毫秒）
             long elapsedTime = System.currentTimeMillis() - startTime;
-            log.info("[{}]use time: {}", pjp.getSignature(), elapsedTime);
+            log.info("[{}]use time: {}ms", pjp.getSignature(), elapsedTime);
             sysLogDTO.setTime(elapsedTime);
             // 发送消息到 系统日志队列
             String msgId = ObjectId.next();

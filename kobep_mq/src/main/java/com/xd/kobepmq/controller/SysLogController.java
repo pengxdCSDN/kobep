@@ -36,8 +36,8 @@ public class SysLogController {
     @LogMsg(actionName = "test")
     @GetMapping(value = "/test")
     public String aa(){
-        log.info("哈哈哈");
-        return "黄的史";
+        log.info("test");
+        return "test";
     }
 
 }
