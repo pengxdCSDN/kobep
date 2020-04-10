@@ -83,8 +83,6 @@
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
-                        <!-- 配置jvm的参数 -->
-                        <JAVA_OPTS></JAVA_OPTS>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>

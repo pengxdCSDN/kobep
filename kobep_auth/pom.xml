@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.xd</groupId>
     <artifactId>kobep_auth</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-RELEASE</version>
     <name>kobep_auth</name>
     <description>Demo project for Spring Boot</description>
 
@@ -126,8 +126,6 @@
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
-                        <!-- 配置jvm的参数 -->
-                        <JAVA_OPTS></JAVA_OPTS>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>
