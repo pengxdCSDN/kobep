@@ -30,6 +30,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <docker.image.prefix>kobep</docker.image.prefix>
     </properties>
 
     <dependencies>

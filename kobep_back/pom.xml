@@ -16,7 +16,6 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR2</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
-        <docker.image.prefix>kobep</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -84,6 +83,7 @@
                     <repository>${docker.image.prefix}/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
+                        <!-- 配置jvm的参数 -->
                         <JAVA_OPTS></JAVA_OPTS>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
